@@ -3,9 +3,7 @@ import java.util.*;
 public final class DataParser {
     private final List<Integer> startStates;
     private final List<List<Integer>> stateTransitions;
-    private final List<Set<Integer>> reversedTransitions;
 
-    private final List<Integer> finalStates = new ArrayList<>();
     private DataParser() {
         Scanner scanner = new Scanner(System.in);
 
@@ -13,12 +11,10 @@ public final class DataParser {
         int m = scanner.nextInt();
         int s = scanner.nextInt();
 
-        reversedTransitions = new ArrayList<>();
         stateTransitions = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            reversedTransitions.add(new HashSet<>());
             stateTransitions.add(new ArrayList<>());
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < m; j++) {
                 stateTransitions.get(i).add(0);
             }
         }
@@ -26,7 +22,6 @@ public final class DataParser {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 int transitionTo = scanner.nextInt();
-                reversedTransitions.get(transitionTo).add(i);
                 stateTransitions.get(i).set(j, transitionTo);
             }
         }
@@ -52,7 +47,4 @@ public final class DataParser {
         return stateTransitions;
     }
 
-    public List<Set<Integer>> reversedTransitions() {
-        return reversedTransitions;
-    }
 }

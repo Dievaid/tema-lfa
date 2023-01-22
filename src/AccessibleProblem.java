@@ -5,7 +5,7 @@ public class AccessibleProblem implements Problem {
     public void solve() {
         ArrayList<Integer> solution = new ArrayList<>();
 
-        var startStates = DataParser.get().startStates();
+        List<Integer> startStates = DataParser.get().startStates();
 
         int[] visited = new int[DataParser.get().stateTransitions().size()];
 

@@ -1,0 +1,24 @@
+======= Capragiu David ======
+=======      334CA     ======
+=======    Tema LFA    ======
+
+
+1. Stări accesibile
+
+    Putem interpreta automatul nostru ca pe un graf,
+unde nodurile sunt stările, iar muchiile sunt tranzițiile.
+Astfel, pentru a afla care sunt stările accesibile putem
+face o parcurgere BFS, unde la începutul parcurgerii vom
+avea în coadă toate stările de start ale automatului
+
+
+2. Sincronizarea automatului
+    Pentru a afla cuvântul de sincronizare m-am folosit
+de algoritmul oferit în referințe, în care trebuie alese
+două stări diferite pentru a forma o nouă stare, după care
+aflându-se un merging sequence folosind DFS, în momentul
+în care ajungem într-o stare în care cele două stări pe
+care le alegem sunt identice, vom opri parcurgerea și vom
+adăuga secvența de merge la soluția problemei și se va
+genera un alt set de stări disponibile până când
+va rămâne doar o stare disponibilă.
